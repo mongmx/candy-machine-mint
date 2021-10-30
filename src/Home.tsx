@@ -27,7 +27,7 @@ const MintContainer = styled.div``; // add your styles here
 
 const MintButton = styled(Button)``; // add your styles here
 
-const Main = styled(main)`
+const Main = styled.main`
   text-align: center;
 `;
 
