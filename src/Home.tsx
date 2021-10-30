@@ -27,6 +27,10 @@ const MintContainer = styled.div``; // add your styles here
 
 const MintButton = styled(Button)``; // add your styles here
 
+const Main = styled(main)`
+  text-align: center;
+`;
+
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
   config: anchor.web3.PublicKey;
@@ -166,10 +170,16 @@ const Home = (props: HomeProps) => {
   ]);
 
   return (
-    <main>
+    <Main>
       {wallet && (
-        <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
+        <p>Your wallet {shortenAddress(wallet.publicKey.toBase58() || "")} = {(balance || 0).toLocaleString()} SOL</p>
       )}
+
+      <h1>Test Minting Website</h1>
+
+      <img src="https://www.arweave.net/fdWaAPeirHwct55Wg6KwCXRbENgxf-BRLqvJ5TwKgJk?ext=png" alt="paint#1" width="300" />
+
+      <h2>Mint NFT</h2>
 
       {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
 
@@ -220,7 +230,7 @@ const Home = (props: HomeProps) => {
           {alertState.message}
         </Alert>
       </Snackbar>
-    </main>
+    </Main>
   );
 };
 
